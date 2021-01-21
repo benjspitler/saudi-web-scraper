@@ -8,7 +8,7 @@ Each time the Kingdom carries out an execution, the SPA publishes an article ann
 
 There is no "executions" tag on the SPA website, so we need to use a search term that will return all execution announcements. The search term I chose is the Arabic word "حكم", which means "judgement" or "verdict". All SPA execution announcement headlines include the phrase "تنفيذ حكم", which means "implementation of verdict", so a search for "حكم" should return all execution announcements:
 
-<img src="images/spa-search-screenshot.png?raw=true"/>
+<img src="spa-search-screenshot.png?raw=true"/>
 
 
 ### Determining filtering terms
@@ -22,7 +22,7 @@ Now we need to inspect the SPA website's HTML to determine exactly where the hea
 
 When we inspect the HTML on that Ajax retrieval page, we find that the actual hyperlink/headline titles are contained in the "h2NewsTitle" node, and the corresponding URLs are contained in the "aNewsTitle" node:
 
-<img src="images/ksa-html-screenshot.png?raw=true"/>
+<img src="ksa-html-screenshot.png?raw=true"/>
 
 
 ### Creating the scraping script
@@ -60,6 +60,6 @@ write.csv(link_df,"C:/Users/benpi/OneDrive/Documents/R/ksa_executions.csv", row.
 
 This creates a .csv file that contains a list of the relevant URLs:
 
-<img src="images/ksa-links-screenshot.png?raw=true"/>
+<img src="ksa-links-screenshot.png?raw=true"/>
 
 The script only crawls through one page at a time. This could be sufficient, if one runs the script once a week, but I may also edit it in the future so that it runs through all available search results pages and appends only new URLs that it hasn't found previously.
